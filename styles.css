@@ -226,6 +226,7 @@ input[type="checkbox"].toggle:checked+label::after {
     backdrop-filter: blur(0.2rem);
     -webkit-backdrop-filter: blur(0.2rem);
     box-shadow: var(--shadow-elevation-low);
+    user-select: none;
 }
 
 .text-container input[type="text"] {
@@ -261,6 +262,7 @@ input[type="checkbox"].toggle:checked+label::after {
     justify-content: space-between;
     width: 100%;
     font-weight: 500;
+    user-select: none;
 }
 
 .additional-options>* {
@@ -281,8 +283,26 @@ input[type="checkbox"].toggle:checked+label::after {
     cursor: pointer;
 }
 
+#forgot-password,
 #remember-me+label {
     cursor: pointer;
+}
+
+.button-container button {
+    outline: none;
+    border: none;
+    background-color: var(--text-inv);
+    width: 100%;
+    padding: 0.8rem;
+    margin: 0.5rem;
+    border-radius: 2rem;
+    font-size: 12pt;
+    font-weight: 600;
+    color: var(--text);
+    border: 1px solid var(--text);
+    box-shadow: var(--shadow-elevation-low);
+    cursor: pointer;
+    user-select: none;
 }
 
 @media screen and (max-width: 640px) {
