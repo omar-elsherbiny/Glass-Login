@@ -11,61 +11,63 @@
 
 <body>
     <main>
-        <section id="signup-panel" class="input-panel">
-            <h3 class="title">Signup</h3>
-            <div class="text-container">
-                <input id="signup-username" type="text">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
-                    <path fill="currentColor"
-                        d="M12 12q-1.65 0-2.825-1.175T8 8t1.175-2.825T12 4t2.825 1.175T16 8t-1.175 2.825T12 12m-8 8v-2.8q0-.85.438-1.562T5.6 14.55q1.55-.775 3.15-1.162T12 13t3.25.388t3.15 1.162q.725.375 1.163 1.088T20 17.2V20z" />
-                </svg>
-            </div>
-            <div class="text-container">
-                <input id="signup-password" type="text">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
-                    <path fill="currentColor"
-                        d="M6 22q-.825 0-1.412-.587T4 20V10q0-.825.588-1.412T6 8h1V6q0-2.075 1.463-3.537T12 1q2.075 0 3.538 1.463T17 6v2h1q.825 0 1.413.588T20 10v10q0 .825-.587 1.413T18 22zm6-5q.825 0 1.413-.587T14 15q0-.825-.587-1.412T12 13q-.825 0-1.412.588T10 15q0 .825.588 1.413T12 17M9 8h6V6q0-1.25-.875-2.125T12 3q-1.25 0-2.125.875T9 6z" />
-                </svg>
-            </div>
-            <div class="button-container">
-                <button id="signup-button">Sign Up</button>
-                <h5>Already have an account? <span id="register-to-login">Login</span></h5>
-            </div>
-        </section>
-        <section class="info-panel">
-            <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 24 24">
-                <path fill="currentColor"
-                    d="m8.825 12l1.475-1.475q.3-.3.3-.7t-.3-.7q-.3-.3-.712-.3t-.713.3L6.7 11.3q-.15.15-.213.325T6.425 12q0 .2.062.375t.213.325l2.175 2.175q.3.3.713.3t.712-.3q.3-.3.3-.7t-.3-.7zm6.35 0L13.7 13.475q-.3.3-.3.7t.3.7q.3.3.713.3t.712-.3L17.3 12.7q.15-.15.213-.325t.062-.375q0-.2-.062-.375T17.3 11.3l-2.175-2.175q-.15-.15-.337-.225t-.376-.075q-.187 0-.375.075t-.337.225q-.3.3-.3.7t.3.7zM5 21q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h14q.825 0 1.413.588T21 5v14q0 .825-.587 1.413T19 21zm0-2h14V5H5zM5 5v14z">
-                </path>
-            </svg>
-            <h3>Welcome Back!</h3>
-        </section>
-        <section id="login-panel" class="input-panel">
-            <h3 class="title">Login</h3>
-            <div class="text-container">
-                <input id="login-username" type="text">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
-                    <path fill="currentColor"
-                        d="M12 12q-1.65 0-2.825-1.175T8 8t1.175-2.825T12 4t2.825 1.175T16 8t-1.175 2.825T12 12m-8 8v-2.8q0-.85.438-1.562T5.6 14.55q1.55-.775 3.15-1.162T12 13t3.25.388t3.15 1.162q.725.375 1.163 1.088T20 17.2V20z" />
-                </svg>
-            </div>
-            <div class="text-container">
-                <input id="login-password" type="text">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
-                    <path fill="currentColor"
-                        d="M6 22q-.825 0-1.412-.587T4 20V10q0-.825.588-1.412T6 8h1V6q0-2.075 1.463-3.537T12 1q2.075 0 3.538 1.463T17 6v2h1q.825 0 1.413.588T20 10v10q0 .825-.587 1.413T18 22zm6-5q.825 0 1.413-.587T14 15q0-.825-.587-1.412T12 13q-.825 0-1.412.588T10 15q0 .825.588 1.413T12 17M9 8h6V6q0-1.25-.875-2.125T12 3q-1.25 0-2.125.875T9 6z" />
-                </svg>
-            </div>
-            <div class="button-container">
-                <div class="additional-options">
-                    <input id="remember-me" type="checkbox">
-                    <label for="remember-me">Remember Me</label>
-                    <label id="forgot-password">Forgot Password</label>
+        <div id="main-container">
+            <section id="signup-panel" class="input-panel">
+                <h1 class="title">Signup</h1>
+                <div class="text-container">
+                    <input id="signup-username" type="text">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M12 12q-1.65 0-2.825-1.175T8 8t1.175-2.825T12 4t2.825 1.175T16 8t-1.175 2.825T12 12m-8 8v-2.8q0-.85.438-1.562T5.6 14.55q1.55-.775 3.15-1.162T12 13t3.25.388t3.15 1.162q.725.375 1.163 1.088T20 17.2V20z" />
+                    </svg>
                 </div>
-                <button id="login-button">Login</button>
-                <h5>Dont have an account? <span id="login-to-register">Register</span></h5>
-            </div>
-        </section>
+                <div class="text-container">
+                    <input id="signup-password" type="text">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M6 22q-.825 0-1.412-.587T4 20V10q0-.825.588-1.412T6 8h1V6q0-2.075 1.463-3.537T12 1q2.075 0 3.538 1.463T17 6v2h1q.825 0 1.413.588T20 10v10q0 .825-.587 1.413T18 22zm6-5q.825 0 1.413-.587T14 15q0-.825-.587-1.412T12 13q-.825 0-1.412.588T10 15q0 .825.588 1.413T12 17M9 8h6V6q0-1.25-.875-2.125T12 3q-1.25 0-2.125.875T9 6z" />
+                    </svg>
+                </div>
+                <div class="button-container">
+                    <button id="signup-button">Sign Up</button>
+                    <h4>Already have an account? <span id="register-to-login">Login</span></h4>
+                </div>
+            </section>
+            <section class="info-panel">
+                <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 24 24">
+                    <path fill="currentColor"
+                        d="m8.825 12l1.475-1.475q.3-.3.3-.7t-.3-.7q-.3-.3-.712-.3t-.713.3L6.7 11.3q-.15.15-.213.325T6.425 12q0 .2.062.375t.213.325l2.175 2.175q.3.3.713.3t.712-.3q.3-.3.3-.7t-.3-.7zm6.35 0L13.7 13.475q-.3.3-.3.7t.3.7q.3.3.713.3t.712-.3L17.3 12.7q.15-.15.213-.325t.062-.375q0-.2-.062-.375T17.3 11.3l-2.175-2.175q-.15-.15-.337-.225t-.376-.075q-.187 0-.375.075t-.337.225q-.3.3-.3.7t.3.7zM5 21q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h14q.825 0 1.413.588T21 5v14q0 .825-.587 1.413T19 21zm0-2h14V5H5zM5 5v14z">
+                    </path>
+                </svg>
+                <h3>Welcome Back!</h3>
+            </section>
+            <section id="login-panel" class="input-panel">
+                <h1 class="title">Login</h1>
+                <div class="text-container">
+                    <input id="login-username" type="text">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M12 12q-1.65 0-2.825-1.175T8 8t1.175-2.825T12 4t2.825 1.175T16 8t-1.175 2.825T12 12m-8 8v-2.8q0-.85.438-1.562T5.6 14.55q1.55-.775 3.15-1.162T12 13t3.25.388t3.15 1.162q.725.375 1.163 1.088T20 17.2V20z" />
+                    </svg>
+                </div>
+                <div class="text-container">
+                    <input id="login-password" type="text">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M6 22q-.825 0-1.412-.587T4 20V10q0-.825.588-1.412T6 8h1V6q0-2.075 1.463-3.537T12 1q2.075 0 3.538 1.463T17 6v2h1q.825 0 1.413.588T20 10v10q0 .825-.587 1.413T18 22zm6-5q.825 0 1.413-.587T14 15q0-.825-.587-1.412T12 13q-.825 0-1.412.588T10 15q0 .825.588 1.413T12 17M9 8h6V6q0-1.25-.875-2.125T12 3q-1.25 0-2.125.875T9 6z" />
+                    </svg>
+                </div>
+                <div class="button-container">
+                    <div class="additional-options">
+                        <input id="remember-me" type="checkbox">
+                        <label for="remember-me">Remember Me</label>
+                        <label id="forgot-password">Forgot Password</label>
+                    </div>
+                    <button id="login-button">Login</button>
+                    <h4>Dont have an account? <span id="login-to-register">Register</span></h4>
+                </div>
+            </section>
+        </div>
     </main>
 </body>
 
