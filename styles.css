@@ -209,9 +209,59 @@ input[type="checkbox"].toggle:checked+label::after {
     height: 100%;
 }
 
+.text-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60%;
+    padding: 0.5rem;
+    border-radius: 2rem;
+    border: 1px solid var(--text);
+    backdrop-filter: blur(0.2rem);
+    -webkit-backdrop-filter: blur(0.2rem);
+    box-shadow: var(--shadow-elevation-low);
+}
+
+.text-container input {
+    width: calc(100% - 2rem);
+    padding: 0 0.5rem;
+    font-size: 12pt;
+    color: var(--text);
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+.text-container input::placeholder {
+    font-size: 12pt;
+    color: var(--text);
+}
+
+.text-container svg {
+    width: 2rem;
+}
+
 @media screen and (max-width: 640px) {
+    #main-container {
+        width: 80%;
+    }
+
+    .text-container {
+        width: 70%;
+    }
+
     .circle {
         width: 10rem;
         height: 10rem;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .text-container input {
+        font-size: 10pt;
+    }
+    
+    .text-container input::placeholder {
+        font-size: 10pt;
     }
 }
