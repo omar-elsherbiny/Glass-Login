@@ -24,19 +24,125 @@
     --shadow-color: 0deg 0% 0%;
 }
 
+:root[data-theme="light"] {
+    --bgr-opacity: 1;
+}
+
+:root[data-theme="dark"] {
+    --bgr-opacity: 0;
+}
+
 * {
     margin: 0;
     padding: 0;
 }
 
 main {
-    width: 100vw;
-    height: 100vh;
+    width: 100lvw;
+    height: 100lvh;
     font-family: var(--font);
-    background: linear-gradient(to top right, hsl(169, 66%, 75%), hsl(188, 76%, 75%));
     display: flex;
     align-items: center;
     justify-content: center;
+}
+main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+
+    background: linear-gradient(to top right, #65dfc9, #6cdbeb);
+    opacity: var(--bgr-opacity);
+    transition: opacity 0.2s ease-in-out;
+}
+main::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    
+    background: linear-gradient(to top right, #283e5b, #1a232c);
+    opacity: calc(1 - var(--bgr-opacity));
+    transition: opacity 0.2s ease-in-out;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 7lvw;
+    padding: 0.3rem;
+
+    background: rgba(255, 255, 255, 0.35);
+    border-radius: 0 0 0 1rem;
+    box-shadow: var(--shadow-elevation-medium);
+    backdrop-filter: blur(0.5rem);
+    -webkit-backdrop-filter: blur(0.5rem);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+input[type="checkbox"].toggle+label {
+    /*visible label*/
+    font-size: 12px;
+    font-weight: 550;
+    text-transform: uppercase;
+    padding: 0.4% 0.5%;
+    border-radius: 5px;
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+input[type="checkbox"].toggle {
+    opacity: 0;
+    position: absolute;
+    scale: 0;
+}
+
+input[type="checkbox"].toggle+label:hover {
+    color: rgb(117, 117, 117);
+}
+
+input[type="checkbox"].toggle+label::before {
+    content: "";
+    width: 4em;
+    height: 1.5em;
+    border-radius: 1em;
+    background-color: rgb(117, 117, 117);
+    margin-right: 0.25em;
+    box-shadow: var(--shadow-elevation-low);
+}
+
+input[type="checkbox"].toggle+label::after {
+    position: absolute;
+    content: "";
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 1em;
+    background-color: #fffefa;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1.2rem;
+    background-image: url('https://api.iconify.design/iconamoon:mode-light-fill.svg?color=%2308081a');
+    transition: all 200ms ease-in-out;
+    box-shadow: var(--shadow-elevation-medium);
+}
+
+input[type="checkbox"].toggle:checked+label::after {
+    transform: translateX(1.5rem);
+    background-color: #08081a;
+    background-image: url('https://api.iconify.design/iconamoon:mode-dark-fill.svg?color=%23fffefa');
 }
 
 #main-container {
