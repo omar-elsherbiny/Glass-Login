@@ -28,12 +28,14 @@
     --bgr-opacity: 1;
     --text: #303030;
     --text-inv: aliceblue;
+    --btn-accent: #b4cff3;
 }
 
 :root[data-theme="dark"] {
     --bgr-opacity: 0;
     --text: aliceblue;
     --text-inv: #303030;
+    --btn-accent: #283E5B;
 }
 
 * {
@@ -215,7 +217,6 @@ input[type="checkbox"].toggle:checked+label::after {
     border: 1px solid rgba(255, 255, 255, 0.4);
 
     transition: left 1s ease-in-out;
-    display: none;
 }
 
 .input-panel {
@@ -225,15 +226,16 @@ input[type="checkbox"].toggle:checked+label::after {
     flex-direction: column;
     height: 100%;
 
-    transition: opacity 0.5s ease-in-out, width 1s ease-in-out;
+    transition: opacity 0.6s ease-in-out, width 1s ease-in-out;
 }
 
 #login-panel {
     width: 65%;
 }
+
 #signup-panel {
     width: 35%;
-    /* opacity: 0; */
+    opacity: 0;
 }
 
 .text-container {
@@ -244,10 +246,11 @@ input[type="checkbox"].toggle:checked+label::after {
     padding: 0.5rem;
     border-radius: 2rem;
     border: 1px solid var(--text);
-    backdrop-filter: blur(0.2rem);
-    -webkit-backdrop-filter: blur(0.2rem);
+    background-color: rgba(255, 255, 255, 0.3);
     box-shadow: var(--shadow-elevation-low);
     user-select: none;
+
+    transition: scale 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
 .text-container input[type="text"] {
@@ -265,6 +268,13 @@ input[type="checkbox"].toggle:checked+label::after {
     color: var(--text);
 }
 
+.button-container button:hover,
+.text-container:hover,
+.text-container:focus-within {
+    scale: 1.025;
+    box-shadow: var(--shadow-elevation-medium);
+}
+
 .text-container svg {
     width: 2rem;
 }
@@ -276,6 +286,7 @@ input[type="checkbox"].toggle:checked+label::after {
     flex-direction: column;
     width: 60%;
 }
+
 .button-container>* {
     margin: 0.2rem;
 }
@@ -313,12 +324,8 @@ input[type="checkbox"].toggle:checked+label::after {
     cursor: pointer;
 }
 
-#forgot-password,
-#remember-me+label {
-    cursor: pointer;
-}
-
 .button-container button {
+    position: relative;
     outline: none;
     border: none;
     background-color: var(--text-inv);
@@ -329,14 +336,52 @@ input[type="checkbox"].toggle:checked+label::after {
     font-size: 12pt;
     font-weight: 600;
     color: var(--text);
-    /* border: 1px solid var(--text); */
     box-shadow: var(--shadow-elevation-low);
-    cursor: pointer;
     user-select: none;
+    overflow: hidden;
+    z-index: 0;
+
+    transition: scale 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.button-container button::after {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    background-color: var(--btn-accent);
+    border-radius: 10px;
+    transform: translate(-100%, 0) rotate(10deg);
+    transform-origin: top left;
+    z-index: -1;
+    transition: 0.2s transform ease-out;
+}
+
+.button-container button:hover::after {
+    transform: translate(-5px, -5px);
 }
 
 .button-container h4 {
     text-align: center;
+}
+
+#forgot-password,
+#remember-me+label,
+.button-container h4 span {
+    cursor: pointer;
+    transition: font-size 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+#forgot-password:hover,
+.additional-options>div:hover,
+.button-container h4 span:hover {
+    font-size: 13pt;
+    color: var(--text-inv);
 }
 
 @media screen and (max-width: 1010px) {

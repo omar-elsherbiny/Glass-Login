@@ -33,3 +33,11 @@ login2register.addEventListener('click', event => {
     signupPanel.style.width = '65%';
     signupPanel.style.opacity = '1';
 });
+
+register2login.addEventListener('click', event => {
+    infoPanel.style.left = '0';
+    loginPanel.style.width = '65%';
+    loginPanel.style.opacity = '1';
+    signupPanel.style.width = '35%';
+    signupPanel.style.opacity = '0';
+});
