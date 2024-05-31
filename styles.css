@@ -43,6 +43,7 @@
 
 body {
     width: 100lvw;
+    /* overflow: hidden; */
 }
 
 main {
@@ -214,6 +215,7 @@ input[type="checkbox"].toggle:checked+label::after {
     border: 1px solid rgba(255, 255, 255, 0.4);
 
     transition: left 1s ease-in-out;
+    display: none;
 }
 
 .input-panel {
@@ -231,7 +233,7 @@ input[type="checkbox"].toggle:checked+label::after {
 }
 #signup-panel {
     width: 35%;
-    opacity: 0;
+    /* opacity: 0; */
 }
 
 .text-container {
@@ -274,14 +276,22 @@ input[type="checkbox"].toggle:checked+label::after {
     flex-direction: column;
     width: 60%;
 }
+.button-container>* {
+    margin: 0.2rem;
+}
 
 .additional-options {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
     width: 100%;
     font-weight: 500;
     user-select: none;
+}
+
+.additional-options label {
+    text-wrap: nowrap;
 }
 
 .additional-options>* {
@@ -289,6 +299,7 @@ input[type="checkbox"].toggle:checked+label::after {
     align-items: center;
     justify-content: center;
     margin: 0.2rem;
+    flex: 1;
 }
 
 #remember-me {
@@ -318,33 +329,28 @@ input[type="checkbox"].toggle:checked+label::after {
     font-size: 12pt;
     font-weight: 600;
     color: var(--text);
-    border: 1px solid var(--text);
+    /* border: 1px solid var(--text); */
     box-shadow: var(--shadow-elevation-low);
     cursor: pointer;
     user-select: none;
 }
 
-@media screen and (max-width: 640px) {
+.button-container h4 {
+    text-align: center;
+}
+
+@media screen and (max-width: 1010px) {
     #main-container {
         width: 80%;
     }
 
+    .button-container,
     .text-container {
         width: 70%;
     }
 
     .circle {
-        width: 10rem;
-        height: 10rem;
-    }
-}
-
-@media screen and (max-width: 425px) {
-    .text-container input {
-        font-size: 10pt;
-    }
-
-    .text-container input::placeholder {
-        font-size: 10pt;
+        width: 15rem;
+        height: 15rem;
     }
 }
