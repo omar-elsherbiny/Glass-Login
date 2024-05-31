@@ -27,11 +27,13 @@
 :root[data-theme="light"] {
     --bgr-opacity: 1;
     --text: #303030;
+    --text-inv: aliceblue;
 }
 
 :root[data-theme="dark"] {
     --bgr-opacity: 0;
     --text: aliceblue;
+    --text-inv: #303030;
 }
 
 * {
@@ -100,8 +102,8 @@ nav {
     background: rgba(255, 255, 255, 0.35);
     border-radius: 0 0 0 1rem;
     box-shadow: var(--shadow-elevation-medium);
-    backdrop-filter: blur(0.5rem);
-    -webkit-backdrop-filter: blur(0.5rem);
+    backdrop-filter: blur(1rem);
+    -webkit-backdrop-filter: blur(1rem);
     border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
@@ -168,8 +170,8 @@ input[type="checkbox"].toggle:checked+label::after {
     background: linear-gradient(to top left, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.4));
     border-radius: 50%;
     box-shadow: var(--shadow-elevation-low);
-    backdrop-filter: blur(0.5rem);
-    -webkit-backdrop-filter: blur(0.5rem);
+    backdrop-filter: blur(1rem);
+    -webkit-backdrop-filter: blur(1rem);
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -191,8 +193,8 @@ input[type="checkbox"].toggle:checked+label::after {
     background: linear-gradient(to top left, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.4));
     border-radius: 1rem;
     box-shadow: var(--shadow-elevation-medium);
-    backdrop-filter: blur(0.5rem);
-    -webkit-backdrop-filter: blur(0.5rem);
+    backdrop-filter: blur(1rem);
+    -webkit-backdrop-filter: blur(1rem);
     border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
@@ -209,6 +211,10 @@ input[type="checkbox"].toggle:checked+label::after {
     height: 100%;
 }
 
+#login-panel {
+    width: 70%;
+}
+
 .text-container {
     display: flex;
     align-items: center;
@@ -222,7 +228,7 @@ input[type="checkbox"].toggle:checked+label::after {
     box-shadow: var(--shadow-elevation-low);
 }
 
-.text-container input {
+.text-container input[type="text"] {
     width: calc(100% - 2rem);
     padding: 0 0.5rem;
     font-size: 12pt;
@@ -232,13 +238,51 @@ input[type="checkbox"].toggle:checked+label::after {
     background-color: transparent;
 }
 
-.text-container input::placeholder {
+.text-container input[type="text"]::placeholder {
     font-size: 12pt;
     color: var(--text);
 }
 
 .text-container svg {
     width: 2rem;
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 60%;
+}
+
+.additional-options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    font-weight: 500;
+}
+
+.additional-options>* {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.2rem;
+}
+
+#remember-me {
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid var(--text);
+    border-radius: 0.15em;
+    margin-right: 0.5rem;
+    background-color: var(--text);
+    accent-color: var(--text-inv);
+    cursor: pointer;
+}
+
+#remember-me+label {
+    cursor: pointer;
 }
 
 @media screen and (max-width: 640px) {
@@ -260,7 +304,7 @@ input[type="checkbox"].toggle:checked+label::after {
     .text-container input {
         font-size: 10pt;
     }
-    
+
     .text-container input::placeholder {
         font-size: 10pt;
     }
