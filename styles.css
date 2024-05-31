@@ -26,10 +26,12 @@
 
 :root[data-theme="light"] {
     --bgr-opacity: 1;
+    --text: #303030;
 }
 
 :root[data-theme="dark"] {
     --bgr-opacity: 0;
+    --text: aliceblue;
 }
 
 * {
@@ -37,14 +39,25 @@
     padding: 0;
 }
 
-main {
+body {
     width: 100lvw;
-    height: 100lvh;
-    font-family: var(--font);
+}
+
+main {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100lvw;
+    height: 100lvh;
+
+    font-family: var(--font);
+    color: var(--text);
+
+    transition-property: color, background-color;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
 }
+
 main::before {
     content: "";
     position: absolute;
@@ -58,6 +71,7 @@ main::before {
     opacity: var(--bgr-opacity);
     transition: opacity 0.2s ease-in-out;
 }
+
 main::after {
     content: "";
     position: absolute;
@@ -66,7 +80,7 @@ main::after {
     left: 0;
     right: 0;
     z-index: -1;
-    
+
     background: linear-gradient(to top right, #283e5b, #1a232c);
     opacity: calc(1 - var(--bgr-opacity));
     transition: opacity 0.2s ease-in-out;
@@ -79,6 +93,7 @@ nav {
     position: absolute;
     top: 0;
     right: 0;
+    min-width: fit-content;
     width: 7lvw;
     padding: 0.3rem;
 
@@ -119,7 +134,7 @@ input[type="checkbox"].toggle+label::before {
     width: 4em;
     height: 1.5em;
     border-radius: 1em;
-    background-color: rgb(117, 117, 117);
+    background-color: rgb(100, 100, 100);
     margin-right: 0.25em;
     box-shadow: var(--shadow-elevation-low);
 }
@@ -145,12 +160,35 @@ input[type="checkbox"].toggle:checked+label::after {
     background-image: url('https://api.iconify.design/iconamoon:mode-dark-fill.svg?color=%23fffefa');
 }
 
+.circle {
+    position: absolute;
+    width: 19rem;
+    height: 19rem;
+
+    background: linear-gradient(to top left, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.4));
+    border-radius: 50%;
+    box-shadow: var(--shadow-elevation-low);
+    backdrop-filter: blur(0.5rem);
+    -webkit-backdrop-filter: blur(0.5rem);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.circle:nth-child(1) {
+    bottom: 6%;
+    left: 6%;
+}
+
+.circle:nth-child(2) {
+    top: 6%;
+    right: 6%;
+}
+
 #main-container {
     display: flex;
     width: 70%;
     height: 75%;
 
-    background: rgba(255, 255, 255, 0.35);
+    background: linear-gradient(to top left, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.4));
     border-radius: 1rem;
     box-shadow: var(--shadow-elevation-medium);
     backdrop-filter: blur(0.5rem);
@@ -169,4 +207,11 @@ input[type="checkbox"].toggle:checked+label::after {
     flex-direction: column;
     width: 50%;
     height: 100%;
+}
+
+@media screen and (max-width: 640px) {
+    .circle {
+        width: 10rem;
+        height: 10rem;
+    }
 }
