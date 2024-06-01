@@ -56,8 +56,11 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100lvw;
-    height: 100lvh;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 
     font-family: var(--font);
     color: var(--text);
@@ -220,7 +223,7 @@ input[type="checkbox"].toggle:checked+label::after {
     background: rgba(184, 215, 249, 0.4);
     border-radius: 1rem;
     box-shadow: var(--shadow-elevation-low);
-    border: 1px solid rgba(184, 215, 249, 0.4);
+    border: 1px solid rgba(184, 215, 249, 0.5);
 
     transition: left 1s ease-in-out;
 }
@@ -469,5 +472,43 @@ input[type="checkbox"].toggle:checked+label::after {
     }
 }
 
-/*445 horz*/
-/*340 vert*/
+@media screen and (max-width: 445px) {
+    .splash-screen h1 {
+        font-size: 14.7pt;
+    }
+    .splash-screen h4 {
+        font-size: 11pt;
+    }
+    .social svg {
+        width: 2rem;
+        height: 2rem;
+    }
+    .text-container {
+        padding: 0.1rem;
+    }
+    .additional-options {
+        font-size: 10.5pt;
+    }
+    .button-container button {
+        padding: 0.5rem;
+        font-size: 10.5pt;
+    }
+    .button-container h4 {
+        font-size: 10.5pt;
+    }
+}
+@media screen and (max-height: 340px) {
+    .text-container {
+        padding: 0.1rem;
+    }
+    .additional-options {
+        font-size: 10.5pt;
+    }
+    .button-container button {
+        padding: 0.5rem;
+        font-size: 10.5pt;
+    }
+    .button-container h4 {
+        font-size: 10.5pt;
+    }
+}
