@@ -27,6 +27,9 @@ const login2register = document.getElementById('login-to-register');
 const register2login = document.getElementById('register-to-login');
 const splashH1 = document.querySelector('.splash-screen h1');
 const splashH4 = document.querySelector('.splash-screen h4');
+const forgotPass = document.getElementById('forgot-password');
+const backdrop = document.querySelector('.backdrop');
+const modal = document.querySelector('.modal');
 
 login2register.addEventListener('click', event => {
     infoPanel.style.left = '65%';
@@ -49,3 +52,15 @@ register2login.addEventListener('click', event => {
 });
 
 loginPanel.style.animation = 'fade-in 0.3s ease-in-out 0s forwards';
+
+forgotPass.addEventListener('click', event => {
+    backdrop.style.pointerEvents = 'auto';
+    backdrop.style.opacity = '1';
+    modal.style.transform = 'translate(-50%, -50%)';
+});
+
+backdrop.addEventListener('click', event => {
+    backdrop.style.pointerEvents = 'none';
+    backdrop.style.opacity = '0';
+    modal.style.transform = 'translate(-50%, 100%)';
+});

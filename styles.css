@@ -49,7 +49,7 @@
 
 body {
     width: 100lvw;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 main {
@@ -308,6 +308,10 @@ input[type="checkbox"].toggle:checked+label::after {
     }
 }
 
+.title {
+    text-align: center;
+}
+
 .text-container {
     display: flex;
     align-items: center;
@@ -456,6 +460,56 @@ input[type="checkbox"].toggle:checked+label::after {
     color: var(--text-inv);
 }
 
+#modal-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    pointer-events: none;
+}
+
+.backdrop {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.7s ease-in-out;
+}
+
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 50%;
+    transform: translate(-50%, 100%);
+    pointer-events: auto;
+    transition: transform 0.7s ease-in-out;
+
+    color: var(--text-inv);
+    background: linear-gradient(to top left, rgba(240, 240, 255, 0.2), rgba(240, 240, 255, 0.4));
+    border-radius: 1rem;
+    box-shadow: var(--shadow-elevation-medium);
+    backdrop-filter: blur(1rem);
+    -webkit-backdrop-filter: blur(1rem);
+    border: 1px solid rgba(240, 240, 255, 0.4);
+    border-bottom: none;
+}
+.modal .text-container input[type="text"],
+.modal .text-container input[type="text"]::placeholder {
+    color: var(--text-inv);
+}
+
 @media screen and (max-width: 1010px) {
     #main-container {
         width: 80%;
@@ -476,38 +530,48 @@ input[type="checkbox"].toggle:checked+label::after {
     .splash-screen h1 {
         font-size: 14.7pt;
     }
+
     .splash-screen h4 {
         font-size: 11pt;
     }
+
     .social svg {
         width: 2rem;
         height: 2rem;
     }
+
     .text-container {
         padding: 0.1rem;
     }
+
     .additional-options {
         font-size: 10.5pt;
     }
+
     .button-container button {
         padding: 0.5rem;
         font-size: 10.5pt;
     }
+
     .button-container h4 {
         font-size: 10.5pt;
     }
 }
+
 @media screen and (max-height: 340px) {
     .text-container {
         padding: 0.1rem;
     }
+
     .additional-options {
         font-size: 10.5pt;
     }
+
     .button-container button {
         padding: 0.5rem;
         font-size: 10.5pt;
     }
+
     .button-container h4 {
         font-size: 10.5pt;
     }
