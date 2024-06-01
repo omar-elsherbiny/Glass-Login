@@ -25,6 +25,8 @@ const loginPanel = document.getElementById('login-panel');
 const signupPanel = document.getElementById('signup-panel');
 const login2register = document.getElementById('login-to-register');
 const register2login = document.getElementById('register-to-login');
+const splashH1 = document.querySelector('.splash-screen h1');
+const splashH4 = document.querySelector('.splash-screen h4');
 
 login2register.addEventListener('click', event => {
     infoPanel.style.left = '65%';
@@ -32,6 +34,8 @@ login2register.addEventListener('click', event => {
     loginPanel.style.animation = 'fade-out 0.2s ease-in-out 0s forwards';
     signupPanel.style.width = '65%';
     signupPanel.style.animation = 'fade-in 0.3s ease-in-out 1.1s forwards';
+    splashH1.innerHTML = 'Hello, Friend!';
+    splashH4.innerHTML = 'Register a new account';
 });
 
 register2login.addEventListener('click', event => {
@@ -40,6 +44,8 @@ register2login.addEventListener('click', event => {
     loginPanel.style.animation = 'fade-in 0.3s ease-in-out 1.1s forwards';
     signupPanel.style.width = '35%';
     signupPanel.style.animation = 'fade-out 0.2s ease-in-out 0s forwards';
+    splashH1.innerHTML = 'Welcome Back!';
+    splashH4.innerHTML = 'Enter your account details';
 });
 
-register2login.dispatchEvent(new Event('click', { bubbles: true }));
+loginPanel.style.animation = 'fade-in 0.3s ease-in-out 0s forwards';
