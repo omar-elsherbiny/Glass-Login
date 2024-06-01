@@ -29,7 +29,7 @@
     --text: #303030;
     --text-inv: aliceblue;
     --btn-accent: #b4cff3;
-    --svg-grad1: #0eb99a;
+    --svg-grad1: #10d5b1;
     --svg-grad2: #0d9aaf;
 }
 
@@ -79,7 +79,7 @@ main::before {
     right: 0;
     z-index: -1;
 
-    background: linear-gradient(to top right, #65dfc9, #6cdbeb);
+    background: linear-gradient(to top right, #3cd7bb, #3ecee5);
     opacity: var(--bgr-opacity);
     transition: opacity 0.2s ease-in-out;
 }
@@ -267,6 +267,12 @@ input[type="checkbox"].toggle:checked+label::after {
     width: 2.2rem;
     height: 2.2rem;
     margin: 0.2rem;
+    cursor: pointer;
+    transition: scale 0.2s ease-in-out;
+}
+
+.social svg:hover {
+    scale: 1.1;
 }
 
 .input-panel {
@@ -286,25 +292,30 @@ input[type="checkbox"].toggle:checked+label::after {
 
 #signup-panel {
     width: 35%;
+    pointer-events: none;
 }
 
 @keyframes fade-out {
     from {
         opacity: 1;
+        pointer-events: auto;
     }
 
     to {
         opacity: 0;
+        pointer-events: none;
     }
 }
 
 @keyframes fade-in {
     from {
         opacity: 0;
+        pointer-events: none;
     }
 
     to {
         opacity: 1;
+        pointer-events: auto;
     }
 }
 
@@ -340,6 +351,13 @@ input[type="checkbox"].toggle:checked+label::after {
 .text-container input[type="text"]::placeholder {
     font-size: 12pt;
     color: var(--text);
+}
+
+.text-container input[type="text"]:-webkit-autofill,
+.text-container input[type="text"]:-webkit-autofill:hover,
+.text-container input[type="text"]:-webkit-autofill:focus,
+.text-container input[type="text"]:-webkit-autofill:active {
+    transition: background-color 600000s 0s, color 600000s 0s;
 }
 
 .button-container button:hover,
@@ -414,6 +432,7 @@ input[type="checkbox"].toggle:checked+label::after {
     user-select: none;
     overflow: hidden;
     z-index: 0;
+    cursor: pointer;
 
     transition: scale 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
