@@ -29,15 +29,17 @@ const register2login = document.getElementById('register-to-login');
 login2register.addEventListener('click', event => {
     infoPanel.style.left = '65%';
     loginPanel.style.width = '35%';
-    loginPanel.style.opacity = '0';
+    loginPanel.style.animation = 'fade-out 0.2s ease-in-out 0s forwards';
     signupPanel.style.width = '65%';
-    signupPanel.style.opacity = '1';
+    signupPanel.style.animation = 'fade-in 0.3s ease-in-out 1.1s forwards';
 });
 
 register2login.addEventListener('click', event => {
     infoPanel.style.left = '0';
     loginPanel.style.width = '65%';
-    loginPanel.style.opacity = '1';
+    loginPanel.style.animation = 'fade-in 0.3s ease-in-out 1.1s forwards';
     signupPanel.style.width = '35%';
-    signupPanel.style.opacity = '0';
+    signupPanel.style.animation = 'fade-out 0.2s ease-in-out 0s forwards';
 });
+
+register2login.dispatchEvent(new Event('click', { bubbles: true }));

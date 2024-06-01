@@ -29,6 +29,8 @@
     --text: #303030;
     --text-inv: aliceblue;
     --btn-accent: #b4cff3;
+    --svg-grad1: #0eb99a;
+    --svg-grad2: #0d9aaf;
 }
 
 :root[data-theme="dark"] {
@@ -36,6 +38,8 @@
     --text: aliceblue;
     --text-inv: #303030;
     --btn-accent: #283E5B;
+    --svg-grad1: #265692;
+    --svg-grad2: #102438;
 }
 
 * {
@@ -100,7 +104,7 @@ nav {
     right: 0;
     min-width: fit-content;
     width: 7lvw;
-    padding: 0.3rem;
+    padding: 0.3rem 0.5rem;
 
     background: rgba(255, 255, 255, 0.35);
     border-radius: 0 0 0 1rem;
@@ -203,20 +207,52 @@ input[type="checkbox"].toggle:checked+label::after {
 }
 
 #info-panel {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
     position: absolute;
     top: 0;
     left: 0;
     width: 35%;
     height: 100%;
 
-    background: rgba(255, 255, 255, 0.4);
+    background: rgba(184, 215, 249, 0.4);
     border-radius: 1rem;
     box-shadow: var(--shadow-elevation-low);
-    backdrop-filter: blur(5rem);
-    -webkit-backdrop-filter: blur(5rem);
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(184, 215, 249, 0.4);
 
     transition: left 1s ease-in-out;
+}
+
+#info-panel>svg {
+    width: 4rem;
+    height: 4rem;
+    max-width: 50%;
+    margin: 30% auto 0 auto;
+}
+
+#info-panel h1 {
+    margin: auto;
+    margin-top: 3rem;
+    padding: 0 0.5rem;
+    font-size: 20pt;
+    text-align: center;
+}
+
+.social {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: auto;
+    padding: 0 0.5rem;
+}
+
+.social svg {
+    width: 2.2rem;
+    height: 2.2rem;
+    margin: 0.2rem;
 }
 
 .input-panel {
@@ -226,7 +262,8 @@ input[type="checkbox"].toggle:checked+label::after {
     flex-direction: column;
     height: 100%;
 
-    transition: opacity 0.6s ease-in-out, width 1s ease-in-out;
+    opacity: 0;
+    transition: width 1s ease-in-out;
 }
 
 #login-panel {
@@ -235,7 +272,26 @@ input[type="checkbox"].toggle:checked+label::after {
 
 #signup-panel {
     width: 35%;
-    opacity: 0;
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .text-container {
@@ -296,8 +352,8 @@ input[type="checkbox"].toggle:checked+label::after {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    gap: 0.2rem;
     width: 100%;
-    font-weight: 500;
     user-select: none;
 }
 
@@ -367,12 +423,14 @@ input[type="checkbox"].toggle:checked+label::after {
 }
 
 .button-container h4 {
+    font-weight: 400;
     text-align: center;
 }
 
 #forgot-password,
 #remember-me+label,
 .button-container h4 span {
+    font-weight: 550;
     cursor: pointer;
     transition: font-size 0.2s ease-in-out, color 0.2s ease-in-out;
 }
@@ -399,3 +457,5 @@ input[type="checkbox"].toggle:checked+label::after {
         height: 15rem;
     }
 }
+
+/*620px*/
