@@ -30,6 +30,8 @@ const splashH4 = document.querySelector('.splash-screen h4');
 const forgotPass = document.getElementById('forgot-password');
 const backdrop = document.querySelector('.backdrop');
 const modal = document.querySelector('.modal');
+const circles = document.querySelectorAll('.circle');
+const buttons = document.querySelectorAll('button');
 
 login2register.addEventListener('click', event => {
     infoPanel.style.left = '65%';
@@ -83,4 +85,28 @@ backdrop.addEventListener('click', event => {
     backdrop.style.pointerEvents = 'none';
     backdrop.style.opacity = '0';
     modal.style.transform = 'translate(-50%, 100%)';
+});
+
+let bx = 0;
+circles.forEach(circle => {
+    let side = 5 + Math.round(Math.random() * 15);
+    circle.style.bottom = `calc(${-(Math.random() * 200).toFixed(2)}% - ${side}rem)`;
+    circle.style.left = (-10 + bx%120).toFixed(2) + '%';
+    bx+=Math.random()*30;
+    circle.style.width = side + 'rem';
+    circle.style.height = side + 'rem';
+    circle.style.animationDelay = Math.max(0, (Math.random() * 10 - 2).toFixed(2)) + 's';
+});
+
+buttons.forEach(button => {
+    button.addEventListener('mouseover', event => {
+        circles.forEach(circle => {
+            circle.style.borderRadius = '0';
+        });
+    });
+    button.addEventListener('mouseleave', event => {
+        circles.forEach(circle => {
+            circle.style.borderRadius = '50%';
+        });
+    });
 });
