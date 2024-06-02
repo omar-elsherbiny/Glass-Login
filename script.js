@@ -37,8 +37,18 @@ login2register.addEventListener('click', event => {
     loginPanel.style.animation = 'fade-out 0.2s ease-in-out 0s forwards';
     signupPanel.style.width = '65%';
     signupPanel.style.animation = 'fade-in 0.3s ease-in-out 1.1s forwards';
-    splashH1.innerHTML = 'Hello, Friend!';
-    splashH4.innerHTML = 'Register a new account';
+    splashH1.style.animation = 'text-bounce 1s ease-in-out';
+    splashH4.style.animation = 'text-bounce 1s ease-in-out';
+    let timeout1 = setTimeout(() => {
+        splashH1.innerHTML = 'Hello, Friend!';
+        splashH4.innerHTML = 'Register a new account';
+        clearTimeout(timeout1);
+    }, 500);
+    let timeout2 = setTimeout(() => {
+        splashH1.style.animation = '';
+        splashH4.style.animation = '';
+        clearTimeout(timeout2);
+    }, 1000);
 });
 
 register2login.addEventListener('click', event => {
@@ -47,8 +57,18 @@ register2login.addEventListener('click', event => {
     loginPanel.style.animation = 'fade-in 0.3s ease-in-out 1.1s forwards';
     signupPanel.style.width = '35%';
     signupPanel.style.animation = 'fade-out 0.2s ease-in-out 0s forwards';
-    splashH1.innerHTML = 'Welcome Back!';
-    splashH4.innerHTML = 'Enter your account details';
+    splashH1.style.animation = 'text-bounce 1s ease-in-out';
+    splashH4.style.animation = 'text-bounce 1s ease-in-out';
+    let timeout1 = setTimeout(() => {
+        splashH1.innerHTML = 'Welcome Back!';
+        splashH4.innerHTML = 'Enter your account details';
+        clearTimeout(timeout1);
+    }, 500);
+    let timeout2 = setTimeout(() => {
+        splashH1.style.animation = '';
+        splashH4.style.animation = '';
+        clearTimeout(timeout2);
+    }, 1000);
 });
 
 loginPanel.style.animation = 'fade-in 0.3s ease-in-out 0s forwards';

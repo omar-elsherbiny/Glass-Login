@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 :root {
     --shadow-elevation-low:
@@ -247,6 +248,17 @@ input[type="checkbox"].toggle:checked+label::after {
     padding: 0 0.5rem;
     font-size: 20pt;
     text-align: center;
+    font-weight: 300;
+    font-family: 'Pacifico', var(--font);
+}
+
+@keyframes text-bounce {
+    0%,100% {
+        scale: 1 1;
+    }
+    50% {
+        scale: 0 1;
+    }
 }
 
 .splash-screen h4 {
